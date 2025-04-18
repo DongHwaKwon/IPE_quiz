@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="start-screen">
+            <h1>정보처리기사 실기 대비 퀴즈</h1>
+            <p>몇 문제를 풀겠습니까?</p>
+            <button onclick="startQuiz(10)">10 문제</button>
+            <button onclick="startQuiz(20)">20 문제</button>
+            <button onclick="startQuiz(62)">ALL 문제</button>
+        </div>
+        <div id="quiz-screen" style="display: none;">
+            <p id="question"></p>
+            <input type="text" id="answer" placeholder="단어를 입력하세요" onkeypress="handleKeyPress(event)">
+            <button id="submit-btn" onclick="checkAnswer()">제출</button>
+            <p id="result"></p>
+            <p>정답: <span id="score">0</span></p>
+            <p>오답: <span id="incorrect">0</span></p>
+            <button id="next-btn" onclick="getRandomQuestion()" style="display: none;">다음 문제</button>
+        </div>
+    </div>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
